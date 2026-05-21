@@ -102,6 +102,29 @@
             clip: auto;
             white-space: normal;
         }
+    
+        /* Force all form fields to have visible text */
+        .floating-label-group input,
+        .floating-label-group textarea,
+        .floating-label-group select {
+            background-color: #1a1a1f !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+        .floating-label-group input:focus,
+        .floating-label-group textarea:focus,
+        .floating-label-group select:focus {
+            background-color: #0d0d10 !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+        /* Fix for any browser autofill */
+        input:-webkit-autofill,
+        textarea:-webkit-autofill,
+        select:-webkit-autofill {
+            -webkit-text-fill-color: #ffffff !important;
+            box-shadow: 0 0 0px 1000px #1a1a1f inset !important;
+        }
     </style>
     <style>
         /* Additional animation classes */
@@ -152,6 +175,34 @@
         .input-glow:focus {
             box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3), 0 0 20px rgba(139, 92, 246, 0.15);
             border-color: rgba(139, 92, 246, 0.6);
+            background: #0d0d10 !important;
+            color: #ffffff !important;
+        }
+        .input-glow:not(:focus) {
+            background: #1a1a1f !important;
+            color: #ffffff !important;
+        }
+        .input-glow::placeholder {
+            color: #5c5c64 !important;
+            opacity: 1;
+        }
+        /* Ensure text is always visible */
+        input, textarea, select {
+            color: #ffffff !important;
+            caret-color: #a78bfa !important;
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+            -webkit-text-fill-color: #ffffff !important;
+            -webkit-box-shadow: 0 0 0px 1000px #1a1a1f inset !important;
+            transition: background-color 5000s ease-in-out 0s;
         }
         .floating-label-group { position: relative; }
         .floating-label-group input:focus ~ label,
@@ -316,6 +367,7 @@
             margin: 0;
         }
     </style>
+<base target="_blank">
 </head>
 <body class="bg-dark-950 text-gray-100 font-sans antialiased overflow-x-hidden">
 
@@ -345,6 +397,17 @@
             </div>
         </div>
     </nav>
+    <!-- Floating Help Button -->
+    <button type="button" id="help-btn" onclick="openHelpModal()" class="fixed top-20 right-4 sm:right-6 z-40 group flex items-center gap-2 px-4 py-3 rounded-2xl glass-strong border border-accent/30 shadow-lg shadow-accent/20 hover:shadow-accent/30 hover:border-accent/50 transition-all duration-300 hover:-translate-y-0.5">
+        <div class="w-8 h-8 rounded-xl bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors">
+            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+        </div>
+        <span class="text-sm font-medium text-white hidden sm:inline">How to Fill Out This Form</span>
+        <span class="text-sm font-medium text-white sm:hidden">Help</span>
+    </button>
+
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
@@ -456,27 +519,27 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="floating-label-group">
                                 <input type="text" id="fullName" name="fullName" placeholder=" " required
-                                    class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                    class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                                 <label for="fullName">Full Name *</label>
                                 <p class="error-message text-red-400 text-xs mt-1" id="error-fullName">Please enter your full name</p>
                             </div>
                             <div class="floating-label-group">
                                 <input type="text" id="professionalName" name="professionalName" placeholder=" "
-                                    class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                    class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                                 <label for="professionalName">Professional Name (if different)</label>
                             </div>
                         </div>
 
                         <div class="floating-label-group">
                             <input type="text" id="jobTitle" name="jobTitle" placeholder=" " required
-                                class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                             <label for="jobTitle">VA Job Title * (e.g., Executive Virtual Assistant)</label>
                             <p class="error-message text-red-400 text-xs mt-1" id="error-jobTitle">Please enter your job title</p>
                         </div>
 
                         <div class="floating-label-group">
                             <input type="text" id="positioning" name="positioning" placeholder=" " required
-                                class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                             <label for="positioning">One-Liner Positioning Statement *</label>
                             <p class="text-xs text-gray-500 mt-2">Example: "I help busy entrepreneurs reclaim 10+ hours a week through strategic inbox and calendar management."</p>
                             <p class="error-message text-red-400 text-xs mt-1" id="error-positioning">Please enter your positioning statement</p>
@@ -484,7 +547,7 @@
 
                         <div class="floating-label-group">
                             <textarea id="bio" name="bio" rows="4" placeholder=" " required maxlength="500"
-                                class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300 resize-none"></textarea>
+                                class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300 resize-none"></textarea>
                             <label for="bio">Short Bio (3-5 sentences) *</label>
                             <div class="flex justify-between mt-2">
                                 <p class="error-message text-red-400 text-xs" id="error-bio">Please enter your bio</p>
@@ -511,7 +574,7 @@
                     <div class="space-y-6">
                         <div class="floating-label-group">
                             <textarea id="services" name="services" rows="3" placeholder=" " required
-                                class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300 resize-none"></textarea>
+                                class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300 resize-none"></textarea>
                             <label for="services">List of Core Services (3-6) *</label>
                             <p class="text-xs text-gray-500 mt-2">Separate each service with a comma or new line</p>
                             <p class="error-message text-red-400 text-xs mt-1" id="error-services">Please list your services</p>
@@ -519,7 +582,7 @@
 
                         <div class="floating-label-group">
                             <input type="text" id="industries" name="industries" placeholder=" " required
-                                class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                             <label for="industries">Industries You Serve Most *</label>
                             <p class="text-xs text-gray-500 mt-2">e.g., E-commerce, Real Estate, Coaching, Healthcare</p>
                             <p class="error-message text-red-400 text-xs mt-1" id="error-industries">Please specify industries</p>
@@ -527,7 +590,7 @@
 
                         <div class="floating-label-group">
                             <input type="text" id="specialization" name="specialization" placeholder=" " required
-                                class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                             <label for="specialization">Primary Specialization *</label>
                             <p class="text-xs text-gray-500 mt-2">Your #1 area of expertise</p>
                             <p class="error-message text-red-400 text-xs mt-1" id="error-specialization">Please enter your specialization</p>
@@ -536,7 +599,7 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="floating-label-group">
                                 <select id="experience" name="experience" required aria-describedby="experience-help"
-                                    class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white focus:outline-none transition-all duration-300 appearance-none cursor-pointer">
+                                    class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white focus:outline-none transition-all duration-300 appearance-none cursor-pointer">
                                     <option value="" disabled selected></option>
                                     <option value="less-1">Less than 1 year</option>
                                     <option value="1-2">1-2 years</option>
@@ -551,7 +614,7 @@
                             </div>
                             <div class="floating-label-group">
                                 <input type="text" id="pricing" name="pricing" placeholder=" " required
-                                    class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                    class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                                 <label for="pricing">Hourly Rate / Pricing Structure *</label>
                                 <p class="text-xs text-gray-500 mt-2">e.g., $15/hr or $1,200/month retainer</p>
                                 <p class="error-message text-red-400 text-xs mt-1" id="error-pricing">Please enter your pricing</p>
@@ -585,7 +648,7 @@
 
                         <div class="floating-label-group mt-8">
                             <input type="url" id="workSample" name="workSample" placeholder=" "
-                                class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                             <label for="workSample">Work Sample / Project Link (Google Drive)</label>
                             <p class="text-xs text-gray-500 mt-2">Share a link to your best work sample or portfolio</p>
                         </div>
@@ -609,14 +672,14 @@
                     <div class="space-y-6">
                         <div class="floating-label-group">
                             <textarea id="testimonial" name="testimonial" rows="4" placeholder=" "
-                                class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300 resize-none"></textarea>
+                                class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300 resize-none"></textarea>
                             <label for="testimonial">Testimonial or Feedback Quote (Optional)</label>
                             <p class="text-xs text-gray-500 mt-2">A powerful client testimonial boosts conversion significantly</p>
                         </div>
 
                         <div class="floating-label-group">
                             <textarea id="challenge" name="challenge" rows="4" placeholder=" "
-                                class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300 resize-none"></textarea>
+                                class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300 resize-none"></textarea>
                             <label for="challenge">Challenging Situation You Navigated (Optional)</label>
                             <p class="text-xs text-gray-500 mt-2">Briefly describe a challenging client situation, your approach, and the resolution</p>
                         </div>
@@ -640,7 +703,7 @@
                     <div class="space-y-6">
                         <div class="floating-label-group">
                             <input type="email" id="email" name="email" placeholder=" " required
-                                class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                             <label for="email">Email Address *</label>
                             <p class="error-message text-red-400 text-xs mt-1" id="error-email">Please enter a valid email</p>
                         </div>
@@ -648,12 +711,12 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="floating-label-group">
                                 <input type="url" id="linkedin" name="linkedin" placeholder=" "
-                                    class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                    class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                                 <label for="linkedin">LinkedIn Profile URL</label>
                             </div>
                             <div class="floating-label-group">
                                 <input type="url" id="facebook" name="facebook" placeholder=" "
-                                    class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                    class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                                 <label for="facebook">Facebook Profile/Page URL</label>
                             </div>
                         </div>
@@ -661,19 +724,19 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="floating-label-group">
                                 <input type="url" id="instagram" name="instagram" placeholder=" "
-                                    class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                    class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                                 <label for="instagram">Instagram Profile URL</label>
                             </div>
                             <div class="floating-label-group">
                                 <input type="text" id="messaging" name="messaging" placeholder=" "
-                                    class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                    class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                                 <label for="messaging">Preferred Messaging App/Handle</label>
                             </div>
                         </div>
 
                         <div class="floating-label-group">
                             <textarea id="otherContact" name="otherContact" rows="2" placeholder=" "
-                                class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300 resize-none"></textarea>
+                                class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300 resize-none"></textarea>
                             <label for="otherContact">Other Contact Information</label>
                         </div>
                     </div>
@@ -696,7 +759,7 @@
                     <div class="space-y-6">
                         <div class="floating-label-group">
                             <textarea id="availability" name="availability" rows="3" placeholder=" " required
-                                class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300 resize-none"></textarea>
+                                class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300 resize-none"></textarea>
                             <label for="availability">Availability Statement *</label>
                             <p class="text-xs text-gray-500 mt-2">e.g., "Available Monday-Friday, 9AM-6PM EST. Open to part-time and project-based work."</p>
                             <p class="error-message text-red-400 text-xs mt-1" id="error-availability">Please describe your availability</p>
@@ -705,13 +768,14 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="floating-label-group">
                                 <input type="text" id="timezone" name="timezone" placeholder=" " required
-                                    class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                    class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                                 <label for="timezone">Primary Timezone *</label>
                                 <p class="error-message text-red-400 text-xs mt-1" id="error-timezone">Please enter your timezone</p>
                             </div>
                             <div class="floating-label-group">
                                 <select id="responseTime" name="responseTime" required
-                                    class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white focus:outline-none transition-all duration-300 appearance-none cursor-pointer">
+                                    class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white focus:outline-none transition-all duration-300 appearance-none cursor-pointer"
+                                    style="background-color: #1a1a1f;">
                                     <option value="" disabled selected></option>
                                     <option value="within-1hr">Within 1 hour</option>
                                     <option value="within-2hrs">Within 2 hours</option>
@@ -726,14 +790,14 @@
 
                         <div class="floating-label-group">
                             <input type="text" id="colorPreference" name="colorPreference" placeholder=" "
-                                class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                             <label for="colorPreference">Color / Theme Preference (Optional)</label>
                             <p class="text-xs text-gray-500 mt-2">e.g., "Navy blue and gold" or "Minimalist black and white"</p>
                         </div>
 
                         <div class="floating-label-group">
                             <input type="text" id="referredBy" name="referredBy" placeholder=" "
-                                class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                             <label for="referredBy">Referred By (Optional)</label>
                         </div>
                     </div>
@@ -776,7 +840,7 @@
 
                         <div class="floating-label-group">
                             <input type="url" id="profilePhotoLink" name="profilePhotoLink" placeholder=" " required
-                                class="input-glow w-full px-4 py-4 bg-dark-800/50 border border-dark-700 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
+                                class="input-glow w-full px-4 py-4 bg-dark-800 border border-dark-600 rounded-xl text-white placeholder-transparent focus:outline-none transition-all duration-300">
                             <label for="profilePhotoLink">Google Drive Photo Link *</label>
                             <p class="text-xs text-gray-500 mt-2">Make sure the link is set to "Anyone with the link can view"</p>
                             <p class="error-message text-red-400 text-xs mt-1" id="error-profilePhotoLink">Please enter a valid Google Drive link</p>
@@ -1382,12 +1446,494 @@
             }
         }
 
+        // ============================================
+        // HELP / GUIDE MODAL
+        // ============================================
+        function openHelpModal() {
+            const modal = document.getElementById('help-modal');
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+
+            // Open first accordion by default for better UX
+            const firstAccordion = modal.querySelector('.accordion-trigger');
+            if (firstAccordion) {
+                const content = firstAccordion.nextElementSibling;
+                const icon = firstAccordion.querySelector('.accordion-icon');
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+                firstAccordion.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        function closeHelpModal() {
+            const modal = document.getElementById('help-modal');
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function closeHelpModalAndScroll() {
+            closeHelpModal();
+            setTimeout(() => {
+                document.getElementById('form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 300);
+        }
+
+        // ============================================
+        // ACCORDION
+        // ============================================
+        function toggleAccordion(trigger) {
+            const content = trigger.nextElementSibling;
+            const icon = trigger.querySelector('.accordion-icon');
+            const isOpen = !content.classList.contains('hidden');
+
+            // Close all other accordions (optional - comment out for multi-open)
+            document.querySelectorAll('.accordion-content').forEach(c => {
+                if (c !== content) c.classList.add('hidden');
+            });
+            document.querySelectorAll('.accordion-icon').forEach(i => {
+                if (i !== icon) i.style.transform = 'rotate(0deg)';
+            });
+            document.querySelectorAll('.accordion-trigger').forEach(t => {
+                if (t !== trigger) t.setAttribute('aria-expanded', 'false');
+            });
+
+            // Toggle current
+            if (isOpen) {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+                trigger.setAttribute('aria-expanded', 'false');
+            } else {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+                trigger.setAttribute('aria-expanded', 'true');
+            }
+        }
+
         // Close modal on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeReviewModal();
+                closeHelpModal();
             }
         });
     </script>
+
+    <!-- Help / Guide Modal -->
+    <div id="help-modal" class="modal-overlay fixed inset-0 z-[60] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="help-modal-title">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeHelpModal()"></div>
+        <div class="modal-content relative w-full max-w-4xl max-h-[90vh] overflow-hidden glass-strong rounded-3xl shadow-2xl flex flex-col">
+
+            <!-- Modal Header -->
+            <div class="sticky top-0 z-20 glass-strong border-b border-white/5 p-6 sm:p-8 rounded-t-3xl shrink-0">
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 id="help-modal-title" class="text-2xl sm:text-3xl font-serif font-bold text-white">Portfolio Submission Guide</h3>
+                                <p class="text-sm text-gray-400 mt-1">Here's a quick guide to help you confidently complete your premium portfolio submission.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" onclick="closeHelpModal()" class="w-10 h-10 rounded-xl bg-dark-800/50 hover:bg-dark-700 flex items-center justify-center transition-colors shrink-0" aria-label="Close guide modal">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div class="overflow-y-auto p-6 sm:p-8 space-y-6" id="help-content">
+
+                <!-- Beginners Welcome Card -->
+                <div class="glass-card rounded-2xl p-6 border border-accent/30 shadow-lg shadow-accent/10 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-gold/5 pointer-events-none"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <h4 class="text-lg font-semibold text-white">Beginners Are Welcome!</h4>
+                        </div>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            You do <strong class="text-accent-light">not</strong> need years of experience or a massive client list to build a stunning portfolio. 
+                            Mock projects, practice work, school assignments, personal brands, and passion projects all count. 
+                            What matters is how you <strong class="text-white">present your skills</strong> and <strong class="text-white">communicate your value</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Accordion Sections -->
+                <div class="space-y-3" id="accordion-container">
+
+                    <!-- Section 1: Personal Information -->
+                    <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button type="button" class="accordion-trigger w-full flex items-center gap-4 p-5 text-left hover:bg-white/5 transition-colors" onclick="toggleAccordion(this)" aria-expanded="false">
+                            <div class="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">Personal Information</h4>
+                                <p class="text-xs text-gray-500">Name, title, positioning & bio</p>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-500 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content hidden px-5 pb-5">
+                            <div class="pt-2 space-y-4 text-sm text-gray-300">
+                                <div class="space-y-2">
+                                    <p><strong class="text-white">Full Name:</strong> Use your real full name. This builds trust with potential clients.</p>
+                                    <p><strong class="text-white">Professional Name:</strong> Can be your branded online identity if you use a different name for business.</p>
+                                    <p><strong class="text-white">Positioning Statement:</strong> One clear sentence explaining what you help clients achieve.</p>
+                                    <div class="glass-card rounded-xl p-4 border-l-4 border-accent">
+                                        <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Example</p>
+                                        <p class="text-gray-200 italic">"I help coaches and online businesses streamline operations through efficient admin and social media support."</p>
+                                    </div>
+                                    <p><strong class="text-white">Bio (3-5 sentences):</strong> Share your background, relevant experiences, strengths, and personality.</p>
+                                </div>
+                                <div class="glass-card rounded-xl p-4 border-l-4 border-gold bg-gold/5">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-gold/20 flex items-center justify-center shrink-0 mt-0.5">
+                                            <svg class="w-3 h-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gold-light text-sm">Beginner-Friendly Note</p>
+                                            <p class="text-gray-400 text-sm mt-1">If you're new to freelancing or virtual assistance, you can still build a strong portfolio. Focus on your skills, strengths, training, mock projects, and willingness to learn.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Services & Expertise -->
+                    <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button type="button" class="accordion-trigger w-full flex items-center gap-4 p-5 text-left hover:bg-white/5 transition-colors" onclick="toggleAccordion(this)" aria-expanded="false">
+                            <div class="w-10 h-10 rounded-xl bg-gold/20 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">Services & Expertise</h4>
+                                <p class="text-xs text-gray-500">What you offer & your specialization</p>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-500 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content hidden px-5 pb-5">
+                            <div class="pt-2 space-y-4 text-sm text-gray-300">
+                                <p>List services you genuinely know or are actively learning. Examples include:</p>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Social Media Management</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Lead Generation</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Executive Assistance</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Graphic Design</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Video Editing</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Email Management</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Appointment Setting</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Data Entry</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Customer Support</div>
+                                </div>
+                                <div class="glass-card rounded-xl p-4 border-l-4 border-gold bg-gold/5">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-gold/20 flex items-center justify-center shrink-0 mt-0.5">
+                                            <svg class="w-3 h-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gold-light text-sm">Beginner-Friendly Note</p>
+                                            <p class="text-gray-400 text-sm mt-1">You do not need years of experience. If you've practiced these skills through training, mock projects, personal pages, internships, school organizations, or helping friends/family businesses, those experiences still count.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Tools & Software -->
+                    <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button type="button" class="accordion-trigger w-full flex items-center gap-4 p-5 text-left hover:bg-white/5 transition-colors" onclick="toggleAccordion(this)" aria-expanded="false">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/20 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">Tools & Software</h4>
+                                <p class="text-xs text-gray-500">Technical stack & proficiencies</p>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-500 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content hidden px-5 pb-5">
+                            <div class="pt-2 space-y-4 text-sm text-gray-300">
+                                <p>Select tools you are familiar with, even at beginner level. Clients appreciate honesty and willingness to learn.</p>
+                                <div class="glass-card rounded-xl p-4 border-l-4 border-gold bg-gold/5">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-gold/20 flex items-center justify-center shrink-0 mt-0.5">
+                                            <svg class="w-3 h-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gold-light text-sm">Beginner-Friendly Note</p>
+                                            <p class="text-gray-400 text-sm mt-1">If you created sample designs in Canva, organized tasks in Notion, edited videos in CapCut, or used Google Workspace for school or practice projects, those are valid experiences.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Work Sample / Portfolio Link -->
+                    <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button type="button" class="accordion-trigger w-full flex items-center gap-4 p-5 text-left hover:bg-white/5 transition-colors" onclick="toggleAccordion(this)" aria-expanded="false">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">Work Sample / Portfolio Link</h4>
+                                <p class="text-xs text-gray-500">Showcase your best work</p>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-500 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content hidden px-5 pb-5">
+                            <div class="pt-2 space-y-4 text-sm text-gray-300">
+                                <p>Upload or link any of the following via Google Drive:</p>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Google Drive folders</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Canva designs</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Sample social posts</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Mock brand projects</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Practice websites</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Presentation decks</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Video edits</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Admin systems</div>
+                                </div>
+
+                                <div class="glass-card rounded-xl p-4 border-l-4 border-accent">
+                                    <p class="font-medium text-accent-light text-sm mb-2">What is a Case Study?</p>
+                                    <p class="text-gray-400 text-sm">A case study is a sample project where you explain the goal, your strategy/process, and the result or expected outcome. Even practice projects can become strong portfolio pieces when presented professionally.</p>
+                                </div>
+
+                                <div class="glass-card rounded-xl p-4 border-l-4 border-gold bg-gold/5">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-gold/20 flex items-center justify-center shrink-0 mt-0.5">
+                                            <svg class="w-3 h-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gold-light text-sm">Beginner-Friendly Note</p>
+                                            <p class="text-gray-400 text-sm mt-1">If you do not have real clients yet, mock projects and case studies are completely acceptable. Examples: sample Instagram content calendar, mock lead generation tracker, practice branding project, demo executive assistant workflow, fictional business social media strategy.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 5: Testimonials -->
+                    <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button type="button" class="accordion-trigger w-full flex items-center gap-4 p-5 text-left hover:bg-white/5 transition-colors" onclick="toggleAccordion(this)" aria-expanded="false">
+                            <div class="w-10 h-10 rounded-xl bg-pink-500/20 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">Testimonials</h4>
+                                <p class="text-xs text-gray-500">Social proof & credibility</p>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-500 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content hidden px-5 pb-5">
+                            <div class="pt-2 space-y-4 text-sm text-gray-300">
+                                <p>Testimonials can come from:</p>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Previous clients</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Internship supervisors</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Teachers</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Classmates</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Business owners</div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Volunteer work</div>
+                                </div>
+                                <div class="glass-card rounded-xl p-4 border-l-4 border-gold bg-gold/5">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-gold/20 flex items-center justify-center shrink-0 mt-0.5">
+                                            <svg class="w-3 h-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gold-light text-sm">Beginner-Friendly Note</p>
+                                            <p class="text-gray-400 text-sm mt-1">If you don't have testimonials yet, you may leave this blank. You can always add them later as you gain experience.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 6: Contact Information -->
+                    <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button type="button" class="accordion-trigger w-full flex items-center gap-4 p-5 text-left hover:bg-white/5 transition-colors" onclick="toggleAccordion(this)" aria-expanded="false">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">Contact Information</h4>
+                                <p class="text-xs text-gray-500">How clients reach you</p>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-500 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content hidden px-5 pb-5">
+                            <div class="pt-2 space-y-4 text-sm text-gray-300">
+                                <p>Use professional and active links only. Recommendations:</p>
+                                <ul class="space-y-2 list-disc list-inside">
+                                    <li>Use a <strong class="text-white">professional email</strong> (avoid old or casual addresses)</li>
+                                    <li>Make sure all <strong class="text-white">links are accessible</strong> and not broken</li>
+                                    <li>Ensure your <strong class="text-white">Facebook or LinkedIn profile</strong> looks presentable</li>
+                                    <li>Set your social profiles to <strong class="text-white">public or accessible</strong> so clients can view them</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 7: Availability & Pricing -->
+                    <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button type="button" class="accordion-trigger w-full flex items-center gap-4 p-5 text-left hover:bg-white/5 transition-colors" onclick="toggleAccordion(this)" aria-expanded="false">
+                            <div class="w-10 h-10 rounded-xl bg-orange-500/20 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">Availability & Pricing</h4>
+                                <p class="text-xs text-gray-500">Setting clear expectations</p>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-500 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content hidden px-5 pb-5">
+                            <div class="pt-2 space-y-4 text-sm text-gray-300">
+                                <p>Be honest about your availability, timezone, rates, and response time.</p>
+                                <div class="glass-card rounded-xl p-4 border-l-4 border-gold bg-gold/5">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-6 h-6 rounded-full bg-gold/20 flex items-center justify-center shrink-0 mt-0.5">
+                                            <svg class="w-3 h-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gold-light text-sm">Beginner-Friendly Note</p>
+                                            <p class="text-gray-400 text-sm mt-1">Beginners may start with entry-level pricing while building confidence and experience. It's better to start with competitive rates and raise them as you grow than to overprice and underdeliver.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 8: Profile Photo -->
+                    <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button type="button" class="accordion-trigger w-full flex items-center gap-4 p-5 text-left hover:bg-white/5 transition-colors" onclick="toggleAccordion(this)" aria-expanded="false">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">Profile Photo</h4>
+                                <p class="text-xs text-gray-500">First impressions matter</p>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-500 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content hidden px-5 pb-5">
+                            <div class="pt-2 space-y-4 text-sm text-gray-300">
+                                <p>Use a photo that meets these criteria:</p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-gray-300 flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Clear, high-quality image
+                                    </div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-gray-300 flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Neutral or clean background
+                                    </div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-gray-300 flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Professional appearance
+                                    </div>
+                                    <div class="glass rounded-lg px-3 py-2 text-xs text-gray-300 flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Friendly smile preferred
+                                    </div>
+                                </div>
+                                <div class="glass-card rounded-xl p-4 border-l-4 border-accent">
+                                    <p class="text-gray-400 text-sm">A professional-looking photo helps establish trust and personal branding. You don't need a studio shot — a well-lit phone photo against a plain wall works perfectly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Encouragement Section -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-accent/30 shadow-lg shadow-accent/10 relative overflow-hidden mt-8">
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-gold/10 pointer-events-none"></div>
+                    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent"></div>
+
+                    <div class="relative z-10 text-center">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-accent/20 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-white mb-3">Remember This</h4>
+                        <div class="max-w-xl mx-auto space-y-3 text-sm text-gray-300">
+                            <p class="text-base text-white font-medium">You do not need to be perfect to start building your portfolio.</p>
+                            <p>Many successful Virtual Assistants started with mock projects, practice work, small freelance tasks, personal brand experiments, and volunteer experiences.</p>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4">
+                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-accent-light">Presentation</div>
+                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-accent-light">Clarity</div>
+                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-accent-light">Professionalism</div>
+                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-accent-light">Initiative</div>
+                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-accent-light">Willingness to Grow</div>
+                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-accent-light">Your Value</div>
+                            </div>
+                            <p class="text-gray-400 italic mt-4">"Your portfolio is not just about experience — it's about showing potential, skills, and value."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sticky Bottom CTA -->
+            <div class="sticky bottom-0 z-20 glass-strong border-t border-white/5 p-6 rounded-b-3xl shrink-0">
+                <button type="button" onclick="closeHelpModalAndScroll()" class="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-accent to-accent-dark text-white font-semibold shadow-lg shadow-accent/25 hover:shadow-accent/40 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                    <span>I'm Ready to Build My Portfolio</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
