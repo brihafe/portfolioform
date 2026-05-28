@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferdy Capizeño VA | Premium Portfolio Intake</title>
-    <meta name="description" content="Build your premium Virtual Assistant portfolio with Ferdy Capizeño VA. Professional portfolio creation for VAs.">
+    <title>Professional Website Portfolio | Only ₱1,499 (Save ₱3,501) – Limited Time</title>
+    <meta name="description" content="Get your Professional Website Portfolio for only ₱1,499 (Original Price ₱5,000). Valid until June 15, 2026. Limited slots available!">
     <script src="https://cdn.tailwindcss.com" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,9 +19,9 @@
                     },
                     colors: {
                         brand: {
-                            50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac',
-                            400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d',
-                            800: '#166534', 900: '#14532d',
+                            50: '#FFFDF0', 100: '#FFF8CC', 200: '#FFED99', 300: '#FFE066',
+                            400: '#FFD930', 500: '#FFD800', 600: '#E6C200', 700: '#CCAD00',
+                            800: '#998100', 900: '#665600',
                         },
                         dark: {
                             50: '#f6f6f7', 100: '#e1e1e3', 200: '#c3c3c7', 300: '#9e9ea4',
@@ -29,10 +29,10 @@
                             800: '#2a2a30', 900: '#1a1a1f', 950: '#0d0d10',
                         },
                         accent: {
-                            light: '#a78bfa', DEFAULT: '#8b5cf6', dark: '#7c3aed',
-                            glow: 'rgba(139, 92, 246, 0.4)',
+                            light: '#FFF0A3', DEFAULT: '#FFD800', dark: '#E6C200',
+                            glow: 'rgba(255, 216, 0, 0.4)',
                         },
-                        gold: { light: '#fde68a', DEFAULT: '#f59e0b', dark: '#d97706', }
+                        gold: { light: '#FFF5C2', DEFAULT: '#FFD800', dark: '#E6C200', }
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
@@ -51,8 +51,8 @@
                             '50%': { transform: 'translateY(-20px) rotate(2deg)' },
                         },
                         pulseGlow: {
-                            '0%, 100%': { boxShadow: '0 0 20px rgba(139, 92, 246, 0.2)' },
-                            '50%': { boxShadow: '0 0 40px rgba(139, 92, 246, 0.5), 0 0 60px rgba(139, 92, 246, 0.2)' },
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(255, 216, 0, 0.2)' },
+                            '50%': { boxShadow: '0 0 40px rgba(255, 216, 0, 0.5), 0 0 60px rgba(255, 216, 0, 0.2)' },
                         },
                         shimmer: {
                             '0%': { backgroundPosition: '-200% 0' },
@@ -108,7 +108,7 @@
         }
         .gradient-bg {
             background: 
-                radial-gradient(ellipse at 20% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 20% 20%, rgba(255, 216, 0, 0.15) 0%, transparent 50%),
                 radial-gradient(ellipse at 80% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
                 radial-gradient(ellipse at 50% 50%, rgba(22, 163, 74, 0.08) 0%, transparent 60%),
                 #0d0d10;
@@ -116,12 +116,12 @@
         .particle {
             position: absolute;
             border-radius: 50%;
-            background: rgba(139, 92, 246, 0.3);
+            background: rgba(255, 216, 0, 0.3);
             pointer-events: none;
         }
         .input-glow:focus {
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3), 0 0 20px rgba(139, 92, 246, 0.15);
-            border-color: rgba(139, 92, 246, 0.6);
+            box-shadow: 0 0 0 3px rgba(255, 216, 0, 0.3), 0 0 20px rgba(255, 216, 0, 0.15);
+            border-color: rgba(255, 216, 0, 0.6);
             background: #0d0d10 !important;
             color: #ffffff !important;
         }
@@ -136,7 +136,7 @@
         /* Ensure text is always visible */
         input, textarea, select {
             color: #ffffff !important;
-            caret-color: #a78bfa !important;
+            caret-color: #FFF0A3 !important;
         }
         input:-webkit-autofill,
         input:-webkit-autofill:hover,
@@ -161,7 +161,7 @@
             top: -10px;
             left: 12px;
             font-size: 0.75rem;
-            color: #a78bfa;
+            color: #FFF0A3;
             background: #1a1a1f;
             padding: 0 6px;
         }
@@ -182,12 +182,12 @@
         }
         .tool-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
+            box-shadow: 0 8px 30px rgba(255, 216, 0, 0.15);
         }
         .tool-card.selected {
-            border-color: rgba(139, 92, 246, 0.6);
-            background: rgba(139, 92, 246, 0.1);
-            box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+            border-color: rgba(255, 216, 0, 0.6);
+            background: rgba(255, 216, 0, 0.1);
+            box-shadow: 0 0 20px rgba(255, 216, 0, 0.2);
         }
         .tool-card.selected .check-icon {
             opacity: 1;
@@ -209,7 +209,7 @@
         }
         .upload-zone {
             transition: all 0.3s ease;
-            border: 2px dashed rgba(139, 92, 246, 0.3);
+            border: 2px dashed rgba(255, 216, 0, 0.3);
         }
         .upload-zone.dragover {
             border-color: rgba(139, 92, 246, 0.8);
@@ -286,21 +286,21 @@
         }
         .section-divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 216, 0, 0.3), transparent);
         }
         .text-gradient {
-            background: linear-gradient(135deg, #fff 0%, #a78bfa 50%, #f59e0b 100%);
+            background: linear-gradient(135deg, #fff 0%, #FFF0A3 50%, #f59e0b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         .btn-shimmer {
-            background: linear-gradient(90deg, #8b5cf6, #a78bfa, #8b5cf6);
+            background: linear-gradient(90deg, #FFD800, #FFF0A3, #FFD800);
             background-size: 200% 100%;
             animation: shimmer 2.5s linear infinite;
         }
         .review-section {
-            border-left: 2px solid rgba(139, 92, 246, 0.3);
+            border-left: 2px solid rgba(255, 216, 0, 0.3);
             padding-left: 1rem;
         }
         .error-message {
@@ -371,6 +371,7 @@
         }
 </style>
 <base target="_blank">
+<base target="_blank">
 </head>
 <body class="bg-dark-950 text-gray-100 font-sans antialiased overflow-x-hidden">
 
@@ -378,22 +379,22 @@
     <div id="particles" class="fixed inset-0 pointer-events-none -z-5 overflow-hidden"></div>
 
     <!-- Navigation -->
-    <a href="#form" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[60] px-4 py-2 bg-accent text-white rounded-xl font-medium">
+    <a href="#form" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[60] px-4 py-2 bg-yellow-400 text-black rounded-xl font-medium">
         Skip to form
     </a>
     <nav class="fixed top-0 left-0 right-0 z-50 glass-strong border-b border-white/5" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-gold flex items-center justify-center">
-                        <span class="text-white font-bold text-sm">FC</span>
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                        <span class="text-black font-bold text-sm">PP</span>
                     </div>
-                    <span class="font-serif text-lg font-semibold text-white tracking-wide">Ferdy Capizeño <span class="text-accent-light">VA</span></span>
+                    <span class="font-serif text-lg font-semibold text-white tracking-wide">Ferdy Capizeño <span class="text-yellow-300">VA</span></span>
                 </div>
                 <div class="hidden md:flex items-center gap-6">
-                    <a href="#form" class="text-sm text-gray-400 hover:text-white transition-colors">Start Submission</a>
-                    <div class="flex items-center gap-2 text-xs text-gray-500">
-                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <a href="#form" class="text-sm text-yellow-400 hover:text-yellow-300 transition-colors font-medium">Claim Offer Now</a>
+                    <div class="flex items-center gap-2 text-xs text-yellow-400 font-medium">
+                        <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
                         Accepting Submissions
                     </div>
                 </div>
@@ -401,66 +402,71 @@
         </div>
     </nav>
     <!-- Floating Help Button -->
-    <button type="button" id="help-btn" onclick="openHelpModal()" class="fixed top-20 right-4 sm:right-6 z-40 group flex items-center gap-2 px-4 py-3 rounded-2xl glass-strong border border-accent/30 shadow-lg shadow-accent/20 hover:shadow-accent/30 hover:border-accent/50 transition-all duration-300 hover:-translate-y-0.5">
-        <div class="w-8 h-8 rounded-xl bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors">
-            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <button type="button" id="help-btn" onclick="openHelpModal()" class="fixed top-20 right-4 sm:right-6 z-40 group flex items-center gap-2 px-4 py-3 rounded-2xl glass-strong border border-yellow-500/30 shadow-lg shadow-yellow-500/20 hover:shadow-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:-translate-y-0.5">
+        <div class="w-8 h-8 rounded-xl bg-yellow-500/20 flex items-center justify-center group-hover:bg-yellow-500/30 transition-colors">
+            <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
         </div>
-        <span class="text-sm font-medium text-white hidden sm:inline">How to Fill Out This Form</span>
-        <span class="text-sm font-medium text-white sm:hidden">Help</span>
+        <span class="text-sm font-medium text-yellow-400 hidden sm:inline">How to Fill Out This Form</span>
+        <span class="text-sm font-medium text-yellow-400 sm:hidden">Help</span>
     </button>
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-        <div class="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute top-20 left-10 w-72 h-72 bg-yellow-500/10 rounded-full blur-3xl animate-float"></div>
         <div class="absolute bottom-20 right-10 w-96 h-96 bg-gold/5 rounded-full blur-3xl animate-float-delayed"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/5 rounded-full blur-3xl animate-float-slow"></div>
 
         <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 animate-fade-in">
-                <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                <span class="text-sm text-gray-300">Premium Portfolio Creation Service</span>
+            <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-yellow-500/10 border border-yellow-500/30 mb-8 animate-fade-in">
+                <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
+                <span class="text-sm text-yellow-400 font-bold tracking-wide">🔥 LIMITED TIME OFFER</span>
             </div>
 
-            <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-slide-up">
-                <span class="text-gradient">Build Your Premium</span><br>
-                <span class="text-white">Virtual Assistant Portfolio</span>
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 animate-slide-up">
+                <span class="text-gradient">Get your Professional</span><br>
+                <span class="text-white">Website Portfolio</span><br>
+                <span class="text-yellow-400">for only ₱1,499</span>
             </h1>
 
-            <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed animate-slide-up" style="animation-delay: 0.1s">
-                Showcase your expertise with a high-converting personal brand portfolio designed to attract premium clients.
+            <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-2 leading-relaxed animate-slide-up" style="animation-delay: 0.1s">
+                <span class="line-through text-gray-500">Original Price ₱5,000</span>
+                <span class="text-yellow-400 font-bold ml-2">Save ₱3,501!</span>
+            </p>
+            <p class="text-base sm:text-lg text-yellow-300 font-semibold max-w-2xl mx-auto mb-8 animate-slide-up" style="animation-delay: 0.2s">
+                ⚡ Valid until June 15, 2026 - Limited Slots Available
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style="animation-delay: 0.2s">
-                <a href="#form" class="group relative px-8 py-4 rounded-2xl btn-shimmer text-white font-semibold text-lg shadow-lg shadow-accent/25 hover:shadow-accent/40 transition-all duration-300 hover:-translate-y-1">
+                <a href="#form" class="group relative px-8 py-4 rounded-2xl btn-shimmer text-white font-semibold text-lg shadow-lg shadow-yellow-500/25 hover:shadow-yellow-500/40 transition-all duration-300 hover:-translate-y-1">
                     <span class="relative z-10 flex items-center gap-2">
-                        Start Your Submission
-                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        Claim Your Portfolio Now
+                        <svg class="w-5 h-5 text-black group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </span>
                 </a>
                 <div class="flex items-center gap-2 text-sm text-gray-500">
-                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                     </svg>
                     Secure & Confidential
                 </div>
             </div>
 
-            <div class="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto animate-fade-in" style="animation-delay: 0.4s">
+            <div class="mt-12 grid grid-cols-3 gap-6 max-w-lg mx-auto animate-fade-in" style="animation-delay: 0.4s">
                 <div class="text-center">
-                    <div class="text-2xl sm:text-3xl font-bold text-white">100+</div>
-                    <div class="text-xs sm:text-sm text-gray-500 mt-1">Portfolios Built</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-2xl sm:text-3xl font-bold text-white">100k</div>
-                    <div class="text-xs sm:text-sm text-gray-500 mt-1">Value Delivered</div>
+                    <div class="text-2xl sm:text-3xl font-bold text-yellow-400">70%</div>
+                    <div class="text-xs sm:text-sm text-gray-500 mt-1">OFF Limited Deal</div>
                 </div>
                 <div class="text-center">
                     <div class="text-2xl sm:text-3xl font-bold text-white">48h</div>
-                    <div class="text-xs sm:text-sm text-gray-500 mt-1">Turnaround</div>
+                    <div class="text-xs sm:text-sm text-gray-500 mt-1">Fast Delivery</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl sm:text-3xl font-bold text-yellow-400">₱1,499</div>
+                    <div class="text-xs sm:text-sm text-gray-500 mt-1">Today Only</div>
                 </div>
             </div>
         </div>
@@ -476,21 +482,21 @@
     <section id="form" class="relative py-20 px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">Portfolio Intake Form</h2>
-                <p class="text-gray-400 max-w-xl mx-auto">Complete all sections below. Your information helps us craft a portfolio that truly represents your brand.</p>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">Secure Your Portfolio Spot</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Fill out the form below to claim this exclusive ₱1,499 offer. Original price ₱5,000 - valid until June 15, 2026.</p>
             </div>
 
             <!-- Progress Tracker -->
             <div class="mb-10">
                 <div class="flex items-center justify-between mb-3">
                     <span class="text-sm text-gray-400">Progress</span>
-                    <span id="progress-text" class="text-sm font-semibold text-accent-light">Step 1 of 7</span>
+                    <span id="progress-text" class="text-sm font-semibold text-yellow-300">Step 1 of 7</span>
                 </div>
                 <div class="h-2 bg-dark-800 rounded-full overflow-hidden" role="progressbar" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100" aria-label="Form completion progress">
-                    <div id="progress-bar" class="progress-fill h-full bg-gradient-to-r from-accent to-gold rounded-full" style="width: 14%"></div>
+                    <div id="progress-bar" class="progress-fill h-full bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full" style="width: 14%"></div>
                 </div>
                 <div class="flex justify-between mt-3">
-                    <button type="button" onclick="goToStep(0)" class="step-dot w-3 h-3 rounded-full bg-accent transition-all duration-300" data-step="0"></button>
+                    <button type="button" onclick="goToStep(0)" class="step-dot w-3 h-3 rounded-full bg-yellow-400 transition-all duration-300" data-step="0"></button>
                     <button type="button" onclick="goToStep(1)" class="step-dot w-3 h-3 rounded-full bg-dark-700 transition-all duration-300" aria-label="Go to step 7"></button>
                     <button type="button" onclick="goToStep(2)" class="step-dot w-3 h-3 rounded-full bg-dark-700 transition-all duration-300" aria-label="Go to step 7"></button>
                     <button type="button" onclick="goToStep(3)" class="step-dot w-3 h-3 rounded-full bg-dark-700 transition-all duration-300" aria-label="Go to step 7"></button>
@@ -506,8 +512,8 @@
                 <!-- Step 1: Personal Information -->
                 <div class="step-content active" data-step="0">
                     <div class="flex items-center gap-3 mb-8">
-                        <div class="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center">
-                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-10 h-10 rounded-xl bg-yellow-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                             </svg>
                         </div>
@@ -808,8 +814,8 @@
                 <!-- Step 7: Profile Photo (Google Drive Link) -->
                 <div class="step-content" data-step="6">
                     <div class="flex items-center gap-3 mb-8">
-                        <div class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center">
-                            <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-10 h-10 rounded-xl bg-yellow-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                             </svg>
                         </div>
@@ -821,10 +827,10 @@
 
                     <div class="space-y-6">
                         <!-- Google Drive Instructions Card -->
-                        <div class="glass-card rounded-2xl p-6 border-l-4 border-accent">
+                        <div class="glass-card rounded-2xl p-6 border-l-4 border-yellow-500">
                             <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center shrink-0 mt-1">
-                                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div class="w-10 h-10 rounded-xl bg-yellow-500/20 flex items-center justify-center shrink-0 mt-1">
+                                    <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                     </svg>
                                 </div>
@@ -833,7 +839,7 @@
                                     <ol class="text-sm text-gray-400 space-y-2 list-decimal list-inside">
                                         <li>Upload your photo to <strong class="text-gray-300">Google Drive</strong></li>
                                         <li>Right-click the file and select <strong class="text-gray-300">"Share"</strong></li>
-                                        <li>Change access to <strong class="text-accent-light">"Anyone with the link"</strong></li>
+                                        <li>Change access to <strong class="text-yellow-300">"Anyone with the link"</strong></li>
                                         <li>Copy the link and paste it below</li>
                                     </ol>
                                 </div>
@@ -851,8 +857,8 @@
                         <!-- Link Preview -->
                         <div id="link-preview-card" class="hidden glass-card rounded-2xl p-6">
                             <div class="flex items-center gap-3 mb-3">
-                                <div class="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center">
-                                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div class="w-8 h-8 rounded-lg bg-yellow-500/20 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                     </svg>
                                 </div>
@@ -874,14 +880,14 @@
 
                     <div class="flex-1"></div>
 
-                    <button type="button" id="next-btn" onclick="nextStep()" class="px-8 py-4 rounded-xl bg-gradient-to-r from-accent to-accent-dark text-white font-semibold shadow-lg shadow-accent/25 hover:shadow-accent/40 transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2">
+                    <button type="button" id="next-btn" onclick="nextStep()" class="px-8 py-4 rounded-xl bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-semibold shadow-lg shadow-yellow-500/25 hover:shadow-yellow-500/40 transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2">
                         <span>Continue</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
                     </button>
 
-                    <button type="button" id="review-btn" onclick="openReviewModal()" class="hidden px-8 py-4 rounded-xl bg-gradient-to-r from-gold to-gold-dark text-dark-900 font-semibold shadow-lg shadow-gold/25 hover:shadow-gold/40 transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2">
+                    <button type="button" id="review-btn" onclick="openReviewModal()" class="hidden px-8 py-4 rounded-xl bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-bold shadow-lg shadow-yellow-500/25 hover:shadow-yellow-500/40 transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2">
                         <span>Review & Submit</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -899,7 +905,7 @@
             <div class="sticky top-0 z-10 glass-strong border-b border-white/5 p-6 rounded-t-3xl">
                 <div class="flex items-center justify-between">
                     <div>
-                        <h3 id="review-modal-title" class="text-2xl font-serif font-bold text-white">Review Your Submission</h3>
+                        <h3 id="review-modal-title" class="text-2xl font-serif font-bold text-white">Review Your Order</h3>
                         <p class="text-sm text-gray-400 mt-1">Please verify all information before confirming</p>
                     </div>
                     <button type="button" onclick="closeReviewModal()" class="w-10 h-10 rounded-xl bg-dark-800/50 hover:bg-dark-700 flex items-center justify-center transition-colors" aria-label="Close review modal">
@@ -917,7 +923,7 @@
                     <button type="button" onclick="closeReviewModal()" class="flex-1 px-6 py-4 rounded-xl border border-dark-700 text-gray-300 hover:text-white hover:border-gray-500 transition-all duration-300 font-medium">
                         Edit Information
                     </button>
-                    <button type="button" onclick="submitForm()" class="flex-1 px-6 py-4 rounded-xl bg-gradient-to-r from-accent to-accent-dark text-white font-semibold shadow-lg shadow-accent/25 hover:shadow-accent/40 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                    <button type="button" onclick="submitForm()" class="flex-1 px-6 py-4 rounded-xl bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-semibold shadow-lg shadow-yellow-500/25 hover:shadow-yellow-500/40 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2">
                         <span>Confirm & Submit</span>
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
@@ -942,13 +948,13 @@
             </div>
 
             <h2 class="font-serif text-4xl font-bold text-white mb-4 animate-slide-up">Submission Successful!</h2>
-            <p class="text-lg text-gray-400 mb-2 animate-slide-up" style="animation-delay: 0.1s">Your responses have been recorded.</p>
-            <p class="text-gray-500 mb-8 animate-slide-up" style="animation-delay: 0.2s">One of our team members will coordinate with you if we need more information and to confirm if your portfolio is complete.</p>
+            <p class="text-lg text-gray-400 mb-2 animate-slide-up" style="animation-delay: 0.1s">Your order has been received!</p>
+            <p class="text-gray-500 mb-8 animate-slide-up" style="animation-delay: 0.2s">Our team will contact you within 24 hours to confirm your ₱1,499 Professional Website Portfolio order and collect payment details.</p>
 
             <div class="glass-card rounded-2xl p-6 mb-8 animate-slide-up" style="animation-delay: 0.3s">
                 <div class="flex items-center gap-3 mb-4">
-                    <div class="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center">
-                        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-8 h-8 rounded-lg bg-yellow-500/20 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
@@ -956,15 +962,15 @@
                 </div>
                 <ul class="space-y-3 text-left text-sm text-gray-400">
                     <li class="flex items-start gap-3">
-                        <span class="w-6 h-6 rounded-full bg-dark-800 flex items-center justify-center text-xs text-accent font-medium shrink-0">1</span>
+                        <span class="w-6 h-6 rounded-full bg-dark-800 flex items-center justify-center text-xs text-yellow-400 font-medium shrink-0">1</span>
                         <span>Our team will review your submission within 24-48 hours</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="w-6 h-6 rounded-full bg-dark-800 flex items-center justify-center text-xs text-accent font-medium shrink-0">2</span>
+                        <span class="w-6 h-6 rounded-full bg-dark-800 flex items-center justify-center text-xs text-yellow-400 font-medium shrink-0">2</span>
                         <span>You'll receive a confirmation email with project timeline</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="w-6 h-6 rounded-full bg-dark-800 flex items-center justify-center text-xs text-accent font-medium shrink-0">3</span>
+                        <span class="w-6 h-6 rounded-full bg-dark-800 flex items-center justify-center text-xs text-yellow-400 font-medium shrink-0">3</span>
                         <span>We'll schedule a brief discovery call to finalize details</span>
                     </li>
                 </ul>
@@ -991,17 +997,17 @@
 
     <!-- Sticky CTA -->
     <div id="sticky-cta" class="sticky-cta" aria-label="Form navigation shortcut">
-        <a href="#form" class="flex items-center gap-3 px-6 py-4 rounded-2xl glass-strong border border-accent/30 shadow-2xl shadow-accent/20 hover:shadow-accent/30 transition-all duration-300 group">
-            <div class="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors">
-                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <a href="#form" class="flex items-center gap-3 px-6 py-4 rounded-2xl glass-strong border border-yellow-500/30 shadow-2xl shadow-yellow-500/20 hover:shadow-yellow-500/30 transition-all duration-300 group">
+            <div class="w-10 h-10 rounded-xl bg-yellow-500/20 flex items-center justify-center group-hover:bg-yellow-500/30 transition-colors">
+                <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
                 </svg>
             </div>
             <div class="text-left">
-                <p class="text-sm font-semibold text-white">Continue Your Submission</p>
-                <p class="text-xs text-gray-400">You're on Step <span id="sticky-step">1</span> of 7</p>
+                <p class="text-sm font-semibold text-white">Complete Your Order</p>
+                <p class="text-xs text-gray-400">Step <span id="sticky-step">1</span> of 7 - Offer ends June 15</p>
             </div>
-            <svg class="w-5 h-5 text-accent group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-yellow-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
             </svg>
         </a>
@@ -1011,13 +1017,13 @@
     <footer class="border-t border-white/5 py-12 px-4">
         <div class="max-w-4xl mx-auto text-center">
             <div class="flex items-center justify-center gap-3 mb-6">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-gold flex items-center justify-center">
-                    <span class="text-white font-bold text-sm">FC</span>
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                    <span class="text-black font-bold text-sm">PP</span>
                 </div>
-                <span class="font-serif text-lg font-semibold text-white">Ferdy Capizeño <span class="text-accent-light">VA</span></span>
+                <span class="font-serif text-lg font-semibold text-white">Ferdy Capizeño <span class="text-yellow-300">VA</span></span>
             </div>
-            <p class="text-sm text-gray-500 mb-4">Crafting premium portfolios for elite Virtual Assistants</p>
-            <p class="text-xs text-gray-600">2024 Ferdy Capizeño VA. All rights reserved.</p>
+            <p class="text-sm text-gray-500 mb-4">Professional Website Portfolios for Freelancers, VAs & Creatives</p>
+            <p class="text-xs text-gray-600">© 2026 Professional Portfolio Services. All rights reserved.</p>
         </div>
     </footer>
 
@@ -1078,7 +1084,7 @@
                 const card = document.createElement('div');
                 card.className = 'tool-card glass-card rounded-xl p-3 text-center relative overflow-hidden group';
                 card.dataset.tool = tool;
-                card.innerHTML = '<div class="check-icon absolute top-2 right-2 w-5 h-5 rounded-full bg-accent flex items-center justify-center opacity-0 transform scale-0 transition-all duration-300"><svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><div class="w-8 h-8 mx-auto mb-2 rounded-lg bg-dark-800/50 flex items-center justify-center group-hover:bg-accent/20 transition-colors"><span class="text-xs font-bold text-gray-400 group-hover:text-accent transition-colors">' + tool.substring(0, 2).toUpperCase() + '</span></div><span class="text-xs text-gray-300 group-hover:text-white transition-colors">' + tool + '</span>';
+                card.innerHTML = '<div class="check-icon absolute top-2 right-2 w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center opacity-0 transform scale-0 transition-all duration-300"><svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><div class="w-8 h-8 mx-auto mb-2 rounded-lg bg-dark-800/50 flex items-center justify-center group-hover:bg-yellow-500/20 transition-colors"><span class="text-xs font-bold text-gray-400 group-hover:text-yellow-400 transition-colors">' + tool.substring(0, 2).toUpperCase() + '</span></div><span class="text-xs text-gray-300 group-hover:text-white transition-colors">' + tool + '</span>';
                 card.addEventListener('click', () => toggleTool(tool, card));
                 grid.appendChild(card);
             });
@@ -1169,9 +1175,9 @@
             document.querySelectorAll('.step-dot').forEach((dot, idx) => {
                 if (idx <= currentStep) {
                     dot.classList.remove('bg-dark-700');
-                    dot.classList.add('bg-accent');
+                    dot.classList.add('bg-yellow-400');
                 } else {
-                    dot.classList.remove('bg-accent');
+                    dot.classList.remove('bg-yellow-400');
                     dot.classList.add('bg-dark-700');
                 }
             });
@@ -1325,7 +1331,7 @@
             // Personal Info
             html += buildReviewSection('Personal Information', [
                 { label: 'Full Name', value: formData.get('fullName') },
-                { label: 'Professional Name', value: formData.get('professionalName') || '—' },
+                { label: 'Professional Name', value: formData.get('professionalName') || '-' },
                 { label: 'Job Title', value: formData.get('jobTitle') },
                 { label: 'Positioning Statement', value: formData.get('positioning') },
                 { label: 'Bio', value: formData.get('bio') }
@@ -1341,26 +1347,26 @@
             ]);
 
             // Tools
-            const toolsList = Array.from(selectedTools).join(', ') || '—';
+            const toolsList = Array.from(selectedTools).join(', ') || '-';
             html += buildReviewSection('Tools & Work Samples', [
                 { label: 'Tools Proficiency', value: toolsList },
-                { label: 'Work Sample Link', value: formData.get('workSample') || '—' }
+                { label: 'Work Sample Link', value: formData.get('workSample') || '-' }
             ]);
 
             // Social Proof
             html += buildReviewSection('Social Proof', [
-                { label: 'Testimonial', value: formData.get('testimonial') || '—' },
-                { label: 'Challenge Story', value: formData.get('challenge') || '—' }
+                { label: 'Testimonial', value: formData.get('testimonial') || '-' },
+                { label: 'Challenge Story', value: formData.get('challenge') || '-' }
             ]);
 
             // Contact
             html += buildReviewSection('Contact Information', [
                 { label: 'Email', value: formData.get('email') },
-                { label: 'LinkedIn', value: formData.get('linkedin') || '—' },
-                { label: 'Facebook', value: formData.get('facebook') || '—' },
-                { label: 'Instagram', value: formData.get('instagram') || '—' },
-                { label: 'Messaging', value: formData.get('messaging') || '—' },
-                { label: 'Other Contact', value: formData.get('otherContact') || '—' }
+                { label: 'LinkedIn', value: formData.get('linkedin') || '-' },
+                { label: 'Facebook', value: formData.get('facebook') || '-' },
+                { label: 'Instagram', value: formData.get('instagram') || '-' },
+                { label: 'Messaging', value: formData.get('messaging') || '-' },
+                { label: 'Other Contact', value: formData.get('otherContact') || '-' }
             ]);
 
             // Availability
@@ -1368,14 +1374,14 @@
                 { label: 'Availability', value: formData.get('availability') },
                 { label: 'Timezone', value: formData.get('timezone') },
                 { label: 'Response Time', value: formData.get('responseTime') },
-                { label: 'Color Preference', value: formData.get('colorPreference') || '—' },
-                { label: 'Referred By', value: formData.get('referredBy') || '—' }
+                { label: 'Color Preference', value: formData.get('colorPreference') || '-' },
+                { label: 'Referred By', value: formData.get('referredBy') || '-' }
             ]);
 
             // Photo Link
             const photoLink = formData.get('profilePhotoLink');
             if (photoLink) {
-                html += '<div class="review-section"><h4 class="text-sm font-semibold text-accent-light mb-3 uppercase tracking-wider">Profile Photo</h4><a href="' + photoLink + '" target="_blank" rel="noopener" class="text-sm text-accent hover:text-accent-light transition-colors break-all">' + photoLink + '</a><p class="text-xs text-gray-500 mt-1">Google Drive link</p></div>';
+                html += '<div class="review-section"><h4 class="text-sm font-semibold text-yellow-300 mb-3 uppercase tracking-wider">Profile Photo</h4><a href="' + photoLink + '" target="_blank" rel="noopener" class="text-sm text-yellow-400 hover:text-yellow-300 transition-colors break-all">' + photoLink + '</a><p class="text-xs text-gray-500 mt-1">Google Drive link</p></div>';
             }
 
             content.innerHTML = html;
@@ -1384,9 +1390,9 @@
         }
 
         function buildReviewSection(title, items) {
-            let html = '<div class="review-section"><h4 class="text-sm font-semibold text-accent-light mb-3 uppercase tracking-wider">' + title + '</h4><div class="space-y-2">';
+            let html = '<div class="review-section"><h4 class="text-sm font-semibold text-yellow-300 mb-3 uppercase tracking-wider">' + title + '</h4><div class="space-y-2">';
             items.forEach(item => {
-                html += '<div class="flex flex-col sm:flex-row sm:gap-4"><span class="text-xs text-gray-500 sm:w-32 shrink-0">' + item.label + '</span><span class="text-sm text-gray-200">' + (item.value || '—') + '</span></div>';
+                html += '<div class="flex flex-col sm:flex-row sm:gap-4"><span class="text-xs text-gray-500 sm:w-32 shrink-0">' + item.label + '</span><span class="text-sm text-gray-200">' + (item.value || '-') + '</span></div>';
             });
             html += '</div></div><div class="section-divider"></div>';
             return html;
@@ -1445,7 +1451,7 @@
 
         function initConfetti() {
             const container = document.getElementById('confetti-container');
-            const colors = ['#8b5cf6', '#f59e0b', '#22c55e', '#ec4899', '#06b6d4', '#ffffff'];
+            const colors = ['#FFD800', '#f59e0b', '#22c55e', '#ec4899', '#06b6d4', '#ffffff'];
 
             for (let i = 0; i < 50; i++) {
                 const piece = document.createElement('div');
@@ -1543,8 +1549,8 @@
                 <div class="flex items-start justify-between gap-4">
                     <div>
                         <div class="flex items-center gap-3 mb-2">
-                            <div class="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center">
-                                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="w-10 h-10 rounded-xl bg-yellow-500/20 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                                 </svg>
                             </div>
@@ -1566,19 +1572,19 @@
             <div class="overflow-y-auto p-6 sm:p-8 space-y-6" id="help-content">
 
                 <!-- Beginners Welcome Card -->
-                <div class="glass-card rounded-2xl p-6 border border-accent/30 shadow-lg shadow-accent/10 relative overflow-hidden">
+                <div class="glass-card rounded-2xl p-6 border border-yellow-500/30 shadow-lg shadow-yellow-500/10 relative overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-gold/5 pointer-events-none"></div>
                     <div class="relative z-10">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center">
-                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="w-8 h-8 rounded-lg bg-yellow-500/20 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                                 </svg>
                             </div>
                             <h4 class="text-lg font-semibold text-white">Beginners Are Welcome!</h4>
                         </div>
                         <p class="text-sm text-gray-300 leading-relaxed">
-                            You do <strong class="text-accent-light">not</strong> need years of experience or a massive client list to build a stunning portfolio. 
+                            You do <strong class="text-yellow-300">not</strong> need years of experience or a massive client list to build a stunning portfolio. 
                             Mock projects, practice work, school assignments, personal brands, and passion projects all count. 
                             What matters is how you <strong class="text-white">present your skills</strong> and <strong class="text-white">communicate your value</strong>.
                         </p>
@@ -1591,8 +1597,8 @@
                     <!-- Section 1: Personal Information -->
                     <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/5">
                         <button type="button" class="accordion-trigger w-full flex items-center gap-4 p-5 text-left hover:bg-white/5 transition-colors" onclick="toggleAccordion(this)" aria-expanded="false">
-                            <div class="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center shrink-0">
-                                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="w-10 h-10 rounded-xl bg-yellow-500/20 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                                 </svg>
                             </div>
@@ -1610,7 +1616,7 @@
                                     <p><strong class="text-white">Full Name:</strong> Use your real full name. This builds trust with potential clients.</p>
                                     <p><strong class="text-white">Professional Name:</strong> Can be your branded online identity if you use a different name for business.</p>
                                     <p><strong class="text-white">Positioning Statement:</strong> One clear sentence explaining what you help clients achieve.</p>
-                                    <div class="glass-card rounded-xl p-4 border-l-4 border-accent">
+                                    <div class="glass-card rounded-xl p-4 border-l-4 border-yellow-500">
                                         <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Example</p>
                                         <p class="text-gray-200 italic">"I help coaches and online businesses streamline operations through efficient admin and social media support."</p>
                                     </div>
@@ -1622,7 +1628,7 @@
                                             <svg class="w-3 h-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                                         </div>
                                         <div>
-                                            <p class="font-medium text-gold-light text-sm">Beginner-Friendly Note</p>
+                                            <p class="font-medium text-yellow-300 text-sm">Beginner-Friendly Note</p>
                                             <p class="text-gray-400 text-sm mt-1">If you're new to freelancing or virtual assistance, you can still build a strong portfolio. Focus on your skills, strengths, training, mock projects, and willingness to learn.</p>
                                         </div>
                                     </div>
@@ -1667,7 +1673,7 @@
                                             <svg class="w-3 h-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                                         </div>
                                         <div>
-                                            <p class="font-medium text-gold-light text-sm">Beginner-Friendly Note</p>
+                                            <p class="font-medium text-yellow-300 text-sm">Beginner-Friendly Note</p>
                                             <p class="text-gray-400 text-sm mt-1">You do not need years of experience. If you've practiced these skills through training, mock projects, personal pages, internships, school organizations, or helping friends/family businesses, those experiences still count.</p>
                                         </div>
                                     </div>
@@ -1702,7 +1708,7 @@
                                             <svg class="w-3 h-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                                         </div>
                                         <div>
-                                            <p class="font-medium text-gold-light text-sm">Beginner-Friendly Note</p>
+                                            <p class="font-medium text-yellow-300 text-sm">Beginner-Friendly Note</p>
                                             <p class="text-gray-400 text-sm mt-1">If you created sample designs in Canva, organized tasks in Notion, edited videos in CapCut, or used Google Workspace for school or practice projects, those are valid experiences.</p>
                                         </div>
                                     </div>
@@ -1714,8 +1720,8 @@
                     <!-- Section 4: Work Sample / Portfolio Link -->
                     <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/5">
                         <button type="button" class="accordion-trigger w-full flex items-center gap-4 p-5 text-left hover:bg-white/5 transition-colors" onclick="toggleAccordion(this)" aria-expanded="false">
-                            <div class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center shrink-0">
-                                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="w-10 h-10 rounded-xl bg-yellow-500/20 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
                             </div>
@@ -1741,8 +1747,8 @@
                                     <div class="glass rounded-lg px-3 py-2 text-xs text-center text-gray-300">Admin systems</div>
                                 </div>
 
-                                <div class="glass-card rounded-xl p-4 border-l-4 border-accent">
-                                    <p class="font-medium text-accent-light text-sm mb-2">What is a Case Study?</p>
+                                <div class="glass-card rounded-xl p-4 border-l-4 border-yellow-500">
+                                    <p class="font-medium text-yellow-300 text-sm mb-2">What is a Case Study?</p>
                                     <p class="text-gray-400 text-sm">A case study is a sample project where you explain the goal, your strategy/process, and the result or expected outcome. Even practice projects can become strong portfolio pieces when presented professionally.</p>
                                 </div>
 
@@ -1752,7 +1758,7 @@
                                             <svg class="w-3 h-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                                         </div>
                                         <div>
-                                            <p class="font-medium text-gold-light text-sm">Beginner-Friendly Note</p>
+                                            <p class="font-medium text-yellow-300 text-sm">Beginner-Friendly Note</p>
                                             <p class="text-gray-400 text-sm mt-1">If you do not have real clients yet, mock projects and case studies are completely acceptable. Examples: sample Instagram content calendar, mock lead generation tracker, practice branding project, demo executive assistant workflow, fictional business social media strategy.</p>
                                         </div>
                                     </div>
@@ -1794,7 +1800,7 @@
                                             <svg class="w-3 h-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                                         </div>
                                         <div>
-                                            <p class="font-medium text-gold-light text-sm">Beginner-Friendly Note</p>
+                                            <p class="font-medium text-yellow-300 text-sm">Beginner-Friendly Note</p>
                                             <p class="text-gray-400 text-sm mt-1">If you don't have testimonials yet, you may leave this blank. You can always add them later as you gain experience.</p>
                                         </div>
                                     </div>
@@ -1857,7 +1863,7 @@
                                             <svg class="w-3 h-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                                         </div>
                                         <div>
-                                            <p class="font-medium text-gold-light text-sm">Beginner-Friendly Note</p>
+                                            <p class="font-medium text-yellow-300 text-sm">Beginner-Friendly Note</p>
                                             <p class="text-gray-400 text-sm mt-1">Beginners may start with entry-level pricing while building confidence and experience. It's better to start with competitive rates and raise them as you grow than to overprice and underdeliver.</p>
                                         </div>
                                     </div>
@@ -1869,8 +1875,8 @@
                     <!-- Section 8: Profile Photo -->
                     <div class="accordion-item glass-card rounded-2xl overflow-hidden border border-white/5">
                         <button type="button" class="accordion-trigger w-full flex items-center gap-4 p-5 text-left hover:bg-white/5 transition-colors" onclick="toggleAccordion(this)" aria-expanded="false">
-                            <div class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center shrink-0">
-                                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="w-10 h-10 rounded-xl bg-yellow-500/20 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
                                 </svg>
@@ -1888,20 +1894,20 @@
                                 <p>Use a photo that meets these criteria:</p>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                                     <div class="glass rounded-lg px-3 py-2 text-xs text-gray-300 flex items-center gap-2">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Clear, high-quality image
+                                        <span class="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>Clear, high-quality image
                                     </div>
                                     <div class="glass rounded-lg px-3 py-2 text-xs text-gray-300 flex items-center gap-2">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Neutral or clean background
+                                        <span class="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>Neutral or clean background
                                     </div>
                                     <div class="glass rounded-lg px-3 py-2 text-xs text-gray-300 flex items-center gap-2">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Professional appearance
+                                        <span class="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>Professional appearance
                                     </div>
                                     <div class="glass rounded-lg px-3 py-2 text-xs text-gray-300 flex items-center gap-2">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Friendly smile preferred
+                                        <span class="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>Friendly smile preferred
                                     </div>
                                 </div>
-                                <div class="glass-card rounded-xl p-4 border-l-4 border-accent">
-                                    <p class="text-gray-400 text-sm">A professional-looking photo helps establish trust and personal branding. You don't need a studio shot — a well-lit phone photo against a plain wall works perfectly.</p>
+                                <div class="glass-card rounded-xl p-4 border-l-4 border-yellow-500">
+                                    <p class="text-gray-400 text-sm">A professional-looking photo helps establish trust and personal branding. You don't need a studio shot - a well-lit phone photo against a plain wall works perfectly.</p>
                                 </div>
                             </div>
                         </div>
@@ -1909,14 +1915,14 @@
                 </div>
 
                 <!-- Final Encouragement Section -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-accent/30 shadow-lg shadow-accent/10 relative overflow-hidden mt-8">
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-yellow-500/30 shadow-lg shadow-yellow-500/10 relative overflow-hidden mt-8">
                     <div class="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-gold/10 pointer-events-none"></div>
                     <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent"></div>
 
                     <div class="relative z-10 text-center">
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-accent/20 flex items-center justify-center">
-                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-yellow-500/20 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                             </svg>
                         </div>
@@ -1925,14 +1931,14 @@
                             <p class="text-base text-white font-medium">You do not need to be perfect to start building your portfolio.</p>
                             <p>Many successful Virtual Assistants started with mock projects, practice work, small freelance tasks, personal brand experiments, and volunteer experiences.</p>
                             <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4">
-                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-accent-light">Presentation</div>
-                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-accent-light">Clarity</div>
-                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-accent-light">Professionalism</div>
-                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-accent-light">Initiative</div>
-                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-accent-light">Willingness to Grow</div>
-                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-accent-light">Your Value</div>
+                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-yellow-300">Presentation</div>
+                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-yellow-300">Clarity</div>
+                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-yellow-300">Professionalism</div>
+                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-yellow-300">Initiative</div>
+                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-yellow-300">Willingness to Grow</div>
+                                <div class="glass rounded-lg px-3 py-2 text-xs text-center text-yellow-300">Your Value</div>
                             </div>
-                            <p class="text-gray-400 italic mt-4">"Your portfolio is not just about experience — it's about showing potential, skills, and value."</p>
+                            <p class="text-gray-400 italic mt-4">"Your portfolio is not just about experience - it's about showing potential, skills, and value."</p>
                         </div>
                     </div>
                 </div>
@@ -1940,7 +1946,7 @@
 
             <!-- Sticky Bottom CTA -->
             <div class="sticky bottom-0 z-20 glass-strong border-t border-white/5 p-6 rounded-b-3xl shrink-0">
-                <button type="button" onclick="closeHelpModalAndScroll()" class="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-accent to-accent-dark text-white font-semibold shadow-lg shadow-accent/25 hover:shadow-accent/40 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                <button type="button" onclick="closeHelpModalAndScroll()" class="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-semibold shadow-lg shadow-yellow-500/25 hover:shadow-yellow-500/40 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2">
                     <span>I'm Ready to Build My Portfolio</span>
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
